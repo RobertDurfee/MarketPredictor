@@ -1,0 +1,16 @@
+Database,Datasheet,Title,Datatype
+FRED,DGS1MO,1-Month Treasury Bill Market Yield,Treasury
+FRED,DGS1,1-Year Treasury Bill Market Yield,Treasury
+FRED,DGS2,2-Year Treasury Note Market Yield,Treasury
+FRED,DGS3MO,3-Month Treasury Bill Market Yield,Treasury
+FRED,DGS3,3-Year Treasury Note Market Yield,Treasury
+FRED,DGS6MO,6-Month Treasury Bill Market Yield,Treasury
+FRED,DCOILBRENTEU,Crude Oil Price,Commodity
+LBMA,GOLD,Gold Price,Commodity
+LBMA,SILVER,Silver Price,Commodity
+CURRFX,USDAUD,USD vs AUD,Currency
+CURRFX,USDCAD,USD vs CAD,Currency
+CURRFX,USDCNY,USD vs CNY,Currency
+CURRFX,USDEUR,USD vs EUR,Currency
+CURRFX,USDGBP,USD vs GBP,Currency
+CURRFX,USDJPY,USD vs JPY,Currency
