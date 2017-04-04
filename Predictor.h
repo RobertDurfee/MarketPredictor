@@ -928,7 +928,7 @@ template<> void Predictor::Insert<Stock>(string symbol, Stock value, Statistic s
 	values << ")";
 
 	stringstream query;
-	query << "INSERT INTO `Eco2`." << tableName.str() << " " << columns << " VALUES " << values.str();
+	query << "INSERT INTO `EconomicData`." << tableName.str() << " " << columns << " VALUES " << values.str();
 
 	mysql_query(databaseConnectionHandle, query.str().c_str());
 }
@@ -959,7 +959,7 @@ template<> void Predictor::Insert<Treasury>(string symbol, Treasury value, Stati
 	values << ")";
 
 	stringstream query;
-	query << "INSERT INTO `Eco2`." << tableName.str() << " " << columns << " VALUES " << values.str();
+	query << "INSERT INTO `EconomicData`." << tableName.str() << " " << columns << " VALUES " << values.str();
 
 	mysql_query(databaseConnectionHandle, query.str().c_str());
 }
@@ -990,7 +990,7 @@ template<> void Predictor::Insert<Commodity>(string symbol, Commodity value, Sta
 	values << ")";
 
 	stringstream query;
-	query << "INSERT INTO `Eco2`." << tableName.str() << " " << columns << " VALUES " << values.str();
+	query << "INSERT INTO `EconomicData`." << tableName.str() << " " << columns << " VALUES " << values.str();
 
 	mysql_query(databaseConnectionHandle, query.str().c_str());
 }
@@ -1021,7 +1021,7 @@ template<> void Predictor::Insert<Currency>(string symbol, Currency value, Stati
 	values << ")";
 
 	stringstream query;
-	query << "INSERT INTO `Eco2`." << tableName.str() << " " << columns << " VALUES " << values.str();
+	query << "INSERT INTO `EconomicData`." << tableName.str() << " " << columns << " VALUES " << values.str();
 
 	mysql_query(databaseConnectionHandle, query.str().c_str());
 }
@@ -1049,7 +1049,7 @@ template<> vector<Stock> Predictor::Select<Stock>(string symbol, Statistic stati
 		where_ << "WHERE `Symbol` = '" << symbol << "'";
 
 	stringstream query;
-	query << "SELECT " << columns << " FROM `Eco2`." << tableName.str() << " " << where_.str();
+	query << "SELECT " << columns << " FROM `EconomicData`." << tableName.str() << " " << where_.str();
 
 	vector<Stock> output;
 
@@ -1077,7 +1077,7 @@ template<> vector<Stock> Predictor::Select<Stock>(string symbol, Date from, Date
 	where_ << "WHERE `Date` >= STR_TO_DATE('" << from << "', '%Y-%m-%d') AND `Date` <= STR_TO_DATE('" << to << "', '%Y-%m-%d')";
 
 	stringstream query;
-	query << "SELECT " << columns << " FROM `Eco2`." << tableName.str() << " " << where_.str();
+	query << "SELECT " << columns << " FROM `EconomicData`." << tableName.str() << " " << where_.str();
 
 	vector<Stock> output;
 
@@ -1117,7 +1117,7 @@ template<> vector<Treasury> Predictor::Select<Treasury>(string symbol, Statistic
 		where_ << "WHERE `Symbol` = '" << symbol << "'";
 
 	stringstream query;
-	query << "SELECT " << columns << " FROM `Eco2`." << tableName.str() << " " << where_.str();
+	query << "SELECT " << columns << " FROM `EconomicData`." << tableName.str() << " " << where_.str();
 
 	vector<Treasury> output;
 
@@ -1145,7 +1145,7 @@ template<> vector<Treasury> Predictor::Select<Treasury>(string symbol, Date from
 	where_ << "WHERE `Date` >= STR_TO_DATE('" << from << "', '%Y-%m-%d') AND `Date` < STR_TO_DATE('" << to << "', '%Y-%m-%d')";
 
 	stringstream query;
-	query << "SELECT " << columns << " FROM `Eco2`." << tableName.str() << " " << where_.str();
+	query << "SELECT " << columns << " FROM `EconomicData`." << tableName.str() << " " << where_.str();
 
 	vector<Treasury> output;
 
@@ -1185,7 +1185,7 @@ template<> vector<Commodity> Predictor::Select<Commodity>(string symbol, Statist
 		where_ << "WHERE `Symbol` = '" << symbol << "'";
 
 	stringstream query;
-	query << "SELECT " << columns << " FROM `Eco2`." << tableName.str() << " " << where_.str();
+	query << "SELECT " << columns << " FROM `EconomicData`." << tableName.str() << " " << where_.str();
 
 	vector<Commodity> output;
 
@@ -1213,7 +1213,7 @@ template<> vector<Commodity> Predictor::Select<Commodity>(string symbol, Date fr
 	where_ << "WHERE `Date` >= STR_TO_DATE('" << from << "', '%Y-%m-%d') AND `Date` < STR_TO_DATE('" << to << "', '%Y-%m-%d')";
 
 	stringstream query;
-	query << "SELECT " << columns << " FROM `Eco2`." << tableName.str() << " " << where_.str();
+	query << "SELECT " << columns << " FROM `EconomicData`." << tableName.str() << " " << where_.str();
 
 	vector<Commodity> output;
 
@@ -1253,7 +1253,7 @@ template<> vector<Currency> Predictor::Select<Currency>(string symbol, Statistic
 		where_ << "WHERE `Symbol` = '" << symbol << "'";
 
 	stringstream query;
-	query << "SELECT " << columns << " FROM `Eco2`." << tableName.str() << " " << where_.str();
+	query << "SELECT " << columns << " FROM `EconomicData`." << tableName.str() << " " << where_.str();
 
 	vector<Currency> output;
 
@@ -1281,7 +1281,7 @@ template<> vector<Currency> Predictor::Select<Currency>(string symbol, Date from
 	where_ << "WHERE `Date` >= STR_TO_DATE('" << from << "', '%Y-%m-%d') AND `Date` < STR_TO_DATE('" << to << "', '%Y-%m-%d')";
 
 	stringstream query;
-	query << "SELECT " << columns << " FROM `Eco2`." << tableName.str() << " " << where_.str();
+	query << "SELECT " << columns << " FROM `EconomicData`." << tableName.str() << " " << where_.str();
 
 	vector<Currency> output;
 
@@ -1316,7 +1316,7 @@ template<> void Predictor::Create<Stock>(string tableName)
 					PRIMARY KEY(`ID`))";
 
 	stringstream query;
-	query << "CREATE TABLE `Eco2`." << tablename.str() << " " << columns;
+	query << "CREATE TABLE `EconomicData`." << tablename.str() << " " << columns;
 
 	mysql_query(databaseConnectionHandle, query.str().c_str());
 }
@@ -1342,7 +1342,7 @@ template<> void Predictor::Create<Stock>(Statistic statistic)
 					PRIMARY KEY(`ID`))";
 
 	stringstream query;
-	query << "CREATE TABLE `Eco2`." << tableName.str() << " " << columns;
+	query << "CREATE TABLE `EconomicData`." << tableName.str() << " " << columns;
 
 	mysql_query(databaseConnectionHandle, query.str().c_str());
 }
@@ -1358,7 +1358,7 @@ template<> void Predictor::Create<Treasury>(string tableName)
 					PRIMARY KEY(`ID`))";
 
 	stringstream query;
-	query << "CREATE TABLE `Eco2`." << tablename.str() << " " << columns;
+	query << "CREATE TABLE `EconomicData`." << tablename.str() << " " << columns;
 
 	mysql_query(databaseConnectionHandle, query.str().c_str());
 }
@@ -1379,7 +1379,7 @@ template<> void Predictor::Create<Treasury>(Statistic statistic)
 					PRIMARY KEY(`ID`))";
 
 	stringstream query;
-	query << "CREATE TABLE `Eco2`." << tableName.str() << " " << columns;
+	query << "CREATE TABLE `EconomicData`." << tableName.str() << " " << columns;
 
 	mysql_query(databaseConnectionHandle, query.str().c_str());
 }
@@ -1395,7 +1395,7 @@ template<> void Predictor::Create<Commodity>(string tableName)
 					PRIMARY KEY(`ID`))";
 
 	stringstream query;
-	query << "CREATE TABLE `Eco2`." << tablename.str() << " " << columns;
+	query << "CREATE TABLE `EconomicData`." << tablename.str() << " " << columns;
 
 	mysql_query(databaseConnectionHandle, query.str().c_str());
 }
@@ -1416,7 +1416,7 @@ template<> void Predictor::Create<Commodity>(Statistic statistic)
 					PRIMARY KEY(`ID`))";
 
 	stringstream query;
-	query << "CREATE TABLE `Eco2`." << tableName.str() << " " << columns;
+	query << "CREATE TABLE `EconomicData`." << tableName.str() << " " << columns;
 
 	mysql_query(databaseConnectionHandle, query.str().c_str());
 }
@@ -1432,7 +1432,7 @@ template<> void Predictor::Create<Currency>(string tableName)
 					PRIMARY KEY(`ID`))";
 
 	stringstream query;
-	query << "CREATE TABLE `Eco2`." << tablename.str() << " " << columns;
+	query << "CREATE TABLE `EconomicData`." << tablename.str() << " " << columns;
 
 	mysql_query(databaseConnectionHandle, query.str().c_str());
 }
@@ -1453,7 +1453,7 @@ template<> void Predictor::Create<Currency>(Statistic statistic)
 					PRIMARY KEY(`ID`))";
 
 	stringstream query;
-	query << "CREATE TABLE `Eco2`." << tableName.str() << " " << columns;
+	query << "CREATE TABLE `EconomicData`." << tableName.str() << " " << columns;
 
 	mysql_query(databaseConnectionHandle, query.str().c_str());
 }
