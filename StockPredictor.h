@@ -6,18 +6,10 @@
 class StockPredictor : public Predictor
 {
 public:
-	StockPredictor(NeuralDimensions sizes, string symbol, bool initializeDatabase = false) : 
-		Predictor(sizes, symbol, initializeDatabase) {};
 	StockPredictor(NeuralDimensions sizes, string symbol, string server, string user, string password, bool initializeDatabase = false) : 
 		Predictor(sizes, symbol, server, user, password, initializeDatabase) {};
-
-	StockPredictor(NeuralNetwork neuralNetwork, string symbol, bool initializeDatabase = false) : 
-		Predictor(neuralNetwork, symbol, initializeDatabase) {};
 	StockPredictor(NeuralNetwork neuralNetwork, string symbol, string server, string user, string password, bool initializeDatabase = false) : 
 		Predictor(neuralNetwork, symbol, server, user, password, initializeDatabase) {};
-
-	StockPredictor(string neuralNetworkFilename, string symbol, bool initializeDatabase = false) : 
-		Predictor(neuralNetworkFilename, symbol, initializeDatabase) {};
 	StockPredictor(string neuralNetworkFilename, string symbol, string server, string user, string password, bool initializeDatabase = false) : 
 		Predictor(neuralNetworkFilename, symbol, server, user, password, initializeDatabase) {};
 		

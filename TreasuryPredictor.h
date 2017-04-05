@@ -6,18 +6,10 @@
 class TreasuryPredictor : public Predictor
 {
 public:
-	TreasuryPredictor(NeuralDimensions sizes, string symbol, bool initializeDatabase = false) : 
-		Predictor(sizes, symbol, initializeDatabase) {};
 	TreasuryPredictor(NeuralDimensions sizes, string symbol, string server, string user, string password, bool initializeDatabase = false) : 
 		Predictor(sizes, symbol, server, user, password, initializeDatabase) {};
-
-	TreasuryPredictor(NeuralNetwork neuralNetwork, string symbol, bool initializeDatabase = false) : 
-		Predictor(neuralNetwork, symbol, initializeDatabase) {};
 	TreasuryPredictor(NeuralNetwork neuralNetwork, string symbol, string server, string user, string password, bool initializeDatabase = false) : 
 		Predictor(neuralNetwork, symbol, server, user, password, initializeDatabase) {};
-
-	TreasuryPredictor(string neuralNetworkFilename, string symbol, bool initializeDatabase = false) : 
-		Predictor(neuralNetworkFilename, symbol, initializeDatabase) {};
 	TreasuryPredictor(string neuralNetworkFilename, string symbol, string server, string user, string password, bool initializeDatabase = false) : 
 		Predictor(neuralNetworkFilename, symbol, server, user, password, initializeDatabase) {};
 	

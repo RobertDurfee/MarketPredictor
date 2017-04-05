@@ -6,18 +6,10 @@
 class CurrencyPredictor : public Predictor
 {
 public:
-	CurrencyPredictor(NeuralDimensions sizes, string symbol, bool initializeDatabase = false) : 
-		Predictor(sizes, symbol, initializeDatabase) {};
 	CurrencyPredictor(NeuralDimensions sizes, string symbol, string server, string user, string password, bool initializeDatabase = false) : 
 		Predictor(sizes, symbol, server, user, password, initializeDatabase) {};
-
-	CurrencyPredictor(NeuralNetwork neuralNetwork, string symbol, bool initializeDatabase = false) : 
-		Predictor(neuralNetwork, symbol, initializeDatabase) {};
 	CurrencyPredictor(NeuralNetwork neuralNetwork, string symbol, string server, string user, string password, bool initializeDatabase = false) : 
 		Predictor(neuralNetwork, symbol, server, user, password, initializeDatabase) {};
-
-	CurrencyPredictor(string neuralNetworkFilename, string symbol, bool initializeDatabase = false) : 
-		Predictor(neuralNetworkFilename, symbol, initializeDatabase) {};
 	CurrencyPredictor(string neuralNetworkFilename, string symbol, string server, string user, string password, bool initializeDatabase = false) : 
 		Predictor(neuralNetworkFilename, symbol, server, user, password, initializeDatabase) {};
 	

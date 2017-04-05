@@ -43,16 +43,8 @@ class Predictor
 {
 public:
 	Predictor(NeuralDimensions sizes, string symbol, string server, string user, string password, bool initializeDatabase);
-	Predictor(NeuralDimensions sizes, string symbol, bool initializeDatabase) : 
-		Predictor(sizes, symbol, "<HOSTNAME>", "<USERNAME>", "<PASSWORD>", initializeDatabase) {};
-
 	Predictor(NeuralNetwork neuralNetwork, string symbol, string server, string user, string password, bool initializeDatabase);
-	Predictor(NeuralNetwork neuralNetwork, string symbol, bool initializeDatabase) :
-		Predictor(neuralNetwork, symbol, "<HOSTNAME>", "<USERNAME>", "<PASSWORD>", initializeDatabase) {};
-
 	Predictor(string neuralNetworkFilename, string symbol, string server, string user, string password, bool initializeDatabase);
-	Predictor(string neuralNetworkFilename, string symbol, bool initializeDatabase) :
-		Predictor(neuralNetworkFilename, symbol, "<HOSTNAME>", "<USERNAME>", "<PASSWORD>", initializeDatabase) {};
 
 	~Predictor();
 
