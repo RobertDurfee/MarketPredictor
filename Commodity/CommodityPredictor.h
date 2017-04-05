@@ -6,18 +6,10 @@
 class CommodityPredictor : public Predictor
 {
 public:
-	CommodityPredictor(NeuralDimensions sizes, string symbol, bool initializeDatabase = false) : 
-		Predictor(sizes, symbol, initializeDatabase) {};
 	CommodityPredictor(NeuralDimensions sizes, string symbol, string server, string user, string password, bool initializeDatabase = false) : 
 		Predictor(sizes, symbol, server, user, password, initializeDatabase) {};
-
-	CommodityPredictor(NeuralNetwork neuralNetwork, string symbol, bool initializeDatabase = false) : 
-		Predictor(neuralNetwork, symbol, initializeDatabase) {};
 	CommodityPredictor(NeuralNetwork neuralNetwork, string symbol, string server, string user, string password, bool initializeDatabase = false) : 
 		Predictor(neuralNetwork, symbol, server, user, password, initializeDatabase) {};
-
-	CommodityPredictor(string neuralNetworkFilename, string symbol, bool initializeDatabase = false) : 
-		Predictor(neuralNetworkFilename, symbol, initializeDatabase) {};
 	CommodityPredictor(string neuralNetworkFilename, string symbol, string server, string user, string password, bool initializeDatabase = false) : 
 		Predictor(neuralNetworkFilename, symbol, server, user, password, initializeDatabase) {};
 	
