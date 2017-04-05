@@ -1,7 +1,7 @@
 #ifndef STOCK_PREDICTOR_HEADER
 #define STOCK_PREDICTOR_HEADER
 
-#include "Predictor.h"
+#include "../Predictor.h"
 
 class StockPredictor : public Predictor
 {

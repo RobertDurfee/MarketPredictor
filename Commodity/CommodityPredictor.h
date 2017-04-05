@@ -1,7 +1,7 @@
 #ifndef COMMODITY_PREDICTOR_HEADER
 #define COMMODITY_PREDICTOR_HEADER
 
-#include "Predictor.h"
+#include "../Predictor.h"
 
 class CommodityPredictor : public Predictor
 {

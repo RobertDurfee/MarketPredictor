@@ -1,7 +1,7 @@
 #ifndef CURRENCY_PREDICTOR_HEADER
 #define CURRENCY_PREDICTOR_HEADER
 
-#include "Predictor.h"
+#include "../Predictor.h"
 
 class CurrencyPredictor : public Predictor
 {

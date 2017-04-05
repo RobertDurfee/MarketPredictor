@@ -1,7 +1,7 @@
 #ifndef TREASURY_PREDICTOR_HEADER
 #define TREASURY_PREDICTOR_HEADER
 
-#include "Predictor.h"
+#include "../Predictor.h"
 
 class TreasuryPredictor : public Predictor
 {

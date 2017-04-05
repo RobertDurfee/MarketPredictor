@@ -3,7 +3,6 @@
 
 #define _CRT_SECURE_NO_WARNINGS //For localtime()
 
-#include "HTTPAlgorithms.h"   //RetrieveWebpage()
 #include "ArtificialNeuralNetwork.h" //NeuralData
 #include <string>             //string
 #include <sstream>            //stringstream
@@ -12,12 +11,12 @@
 #include <mysql.h>            //MYSQL, mysql_real_connect(), mysql_close(), mysql_query(), MYSQL_RES, MYSQL_ROW, mysql_free_result(), mysql_store_result(), mysql_fetch_row()
 #include <time.h>             //tm, time_t, mktime(), localtime()
 
-#include "Stock.h"            //Stock
-#include "Treasury.h"         //Treasury
-#include "Commodity.h"        //Commodity
-#include "Currency.h"         //Currency
+#include "Stock/Stock.h"            //Stock
+#include "Treasury/Treasury.h"         //Treasury
+#include "Commodity/Commodity.h"        //Commodity
+#include "Currency/Currency.h"         //Currency
 
-#include "Schemas.h"          //YahooSchema, QuandlSchema
+#include "Symbols/Schemas.h"          //YahooSchema, QuandlSchema
 
 #include "PredictorTypes.h"   //Date, Dates, PredictionSet, PredictionActualPair, Actuals, Predictions
 
@@ -523,7 +522,7 @@ template<> void Predictor::InitializeSymbol<Stock>(string symbol, string databas
 template<> vector<YahooSchema> Predictor::Symbols<YahooSchema>()
 {
 	//Read S&P 500 Stock Symbols File into Character Buffer
-	ifstream SP500StockSymbolsFile("S&P500.csv", ios::binary);
+	ifstream SP500StockSymbolsFile("S&P500Symbols.csv", ios::binary);
 	SP500StockSymbolsFile.seekg(0, SP500StockSymbolsFile.end);
 	int length = (int)SP500StockSymbolsFile.tellg();
 	SP500StockSymbolsFile.seekg(0, SP500StockSymbolsFile.beg);
