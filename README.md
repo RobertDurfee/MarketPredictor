@@ -2,7 +2,7 @@
 C++ classes using feed-forward neural networks to predict stocks, treasuries, commodities, and currencies.
 
 ### Disclaimer
-This is not production-worthy code! View this simply as a proof-of-concept.
+This is not production-worthy code! View this simply as a proof-of-concept. Preconditions are implicit. No error checking exists.
 
 Additionally, this project has yet to produce statistically significant results. I still have not found the parameters and inputs necessary to make an accurate prediction. This may not even be possible as theory suggests that markets can never be predicted accurately through pattern recognition as it is chaotic in nature.
 
