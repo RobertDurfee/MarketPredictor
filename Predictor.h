@@ -3,6 +3,7 @@
 
 #define _CRT_SECURE_NO_WARNINGS //For localtime()
 
+#include "HTTPAlgorithms.h" //RetrieveWebpage()
 #include "ArtificialNeuralNetwork.h" //NeuralData
 #include <string>             //string
 #include <sstream>            //stringstream
