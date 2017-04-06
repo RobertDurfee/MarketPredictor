@@ -21,6 +21,11 @@ The `Predictor` interface (or abstract class) must be initialized with
 
 Additionally, the `NeuralNetwork` must be initialized with either a set of `NeuralDimensions`, a `NeuralNetwork` object, or a filename to a saved `NeuralNetwork`.
 
+### Initialize Database
+```C++
+void InitializeDatabase();
+```
+
 ### Typedefs
 ```C++
 typedef vector<double> Predictions;
