@@ -7,8 +7,8 @@
 typedef std::string Date;
 typedef std::vector<Date> Dates;
 
-#define ACTUAL     1
 #define PREDICTION 0
+#define ACTUAL     1
 
 typedef std::vector<double> Predictions;
 typedef std::vector<double> Actuals;
