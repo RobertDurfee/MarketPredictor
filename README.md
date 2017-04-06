@@ -61,3 +61,32 @@ PredictionInformation * Predict(string startingdate, int numberofdates);
 ~Predictor();
 ```
 The `Predictor` interface must close the connection to the server before the object is deleted. This is the purpose of the destructor.
+
+### Example
+```C++
+#include "Stock/StockPredictor.h"
+#include <iostream>
+
+int main()
+{
+	NeuralDimensions sizes = { 5, 100, 100, 100, 1 };
+
+	StockPredictor stockPredictor(sizes, "AAPL", "<HOSTNAME>", "<USERNAME>", "<PASSWORD>");
+
+	PredictionInformation * predictionInfo = stockPredictor.Predict("2016-02-05", 14);
+	cout << predictionInfo->GainWith << " " << predictionInfo->GainWithout << " " << predictionInfo->GainBest << endl;
+
+	stockPredictor.Train(500, 7, 0.5, "2016-01-01", 35);
+	
+	predictionInfo = stockPredictor.Predict("2016-02-05", 14);
+	cout << predictionInfo->GainWith << " " << predictionInfo->GainWithout << " " << predictionInfo->GainBest << endl;
+
+	for (int i = 0; i < 50; i++)
+	{
+		predictionInfo = stockPredictor.TrainPredict(500, 7, 0.5, "2016-01-29", 7, 2);
+		cout << predictionInfo->GainWith << " " << predictionInfo->GainWithout << " " << predictionInfo->GainBest << endl;
+	}
+	
+	return 0;
+}
+```
